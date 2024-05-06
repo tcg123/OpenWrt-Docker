@@ -89,6 +89,8 @@ jobs:
       - name: Generate Variables
         id: env
         run: |
+          str1="username: "${{ secrets.DOCKERHUB_USERNAME }}
+          echo ${str1}
           export DEVICE_PLATFORM=$(echo ${{ matrix.TARGETS }} | awk -F '/' '{print $1}')
           echo "DEVICE_PLATFORM=$DEVICE_PLATFORM" >> $GITHUB_ENV
           export DEVICE_TARGET=$(echo ${{ matrix.TARGETS }} | awk -F '/' '{print $2}')
