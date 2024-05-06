@@ -70,8 +70,6 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          str1="username: "${{ secrets.DOCKERHUB_USERNAME }}
-          echo ${str1}
           sudo -E apt-get -qq update
           sudo -E apt-get -qq install build-essential libncurses5-dev libncursesw5-dev \
             zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 qemu-utils genisoimage
